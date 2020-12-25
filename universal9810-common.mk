@@ -58,6 +58,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap
 
+# F-Droid
+PRODUCT_PACKAGES += \
+    F-DroidPrivilegedExtension
+
 # Init
 PRODUCT_PACKAGES += \
     init.samsung.rc \
