@@ -24,6 +24,16 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.telephony.default_network=10,10
 
+# Bluetooth
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.bluetooth.a2dp_offload.supported=false \
+    persist.bluetooth.a2dp_offload.disabled=true \
+    vendor.audio.feature.a2dp_offload.enable=false
+
+# Process pool
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.device_config.runtime_native.usap_pool_enabled=true
+
 # Tones
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.ringtone=Orion.ogg \

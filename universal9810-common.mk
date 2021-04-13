@@ -22,6 +22,7 @@ endif
 
 # Permissions
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/permissions/platform-samsung.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/platform-samsung.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.ethernet.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.ethernet.xml \
@@ -64,6 +65,7 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_PACKAGES += \
+    fstab.zram \
     init.samsung.rc \
     init.usb_accessory.rc
 
@@ -93,6 +95,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/libnfc-nci.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/libnfc-nci.conf
 
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.3-service.samsung-9810
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PLATFORM_VNDK_VERSION)/etc/powerhint.json
+
 # Recovery
 PRODUCT_PACKAGES += \
     init.recovery.samsungexynos9810.rc
@@ -101,9 +110,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SamsungDoze
 
+# Touch
+PRODUCT_PACKAGES += \
+    lineage.touch@1.0-service.9810
+
 # Trust HAL
 PRODUCT_PACKAGES += \
     lineage.trust@1.0-service
+
+# FastCharge
+PRODUCT_PACKAGES += \
+    lineage.fastcharge@1.0-service.9810
 
 # Lights
 PRODUCT_PACKAGES += \
