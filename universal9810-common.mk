@@ -135,7 +135,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio_keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio_keys.kl
 
 # Soong
-PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+PRODUCT_SOONG_NAMESPACES += \
+	$(LOCAL_PATH) \
+	hardware/google/pixel
 
 # Property overrides
 -include $(LOCAL_PATH)/product_prop.mk
